@@ -28,6 +28,8 @@ ROOT = root_path.relative_to(Path.cwd())
 # Source
 SOURCES_LIST = ["Image", "Video", "Webcam"]
 
+CHARTS = ['None','F1 Curve', 'R Curve', 'P Curve', 'Confusion Matrix', 'PR Curve', 'Results']
+
 
 # DL model config
 DETECTION_MODEL_DIR = ROOT / 'weights' / 'detection'
