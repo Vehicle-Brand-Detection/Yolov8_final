@@ -32,6 +32,7 @@ def _display_detected_frames(conf, model, st_frame, image):
 
     # Plot the detected objects on the video frame
     res_plotted = res[0].plot()
+    # result=model.track(image,show=True,tracker="bytetrack.yaml")
     st_frame.image(res_plotted,
                    caption='Detected Video',
                    channels="BGR",
@@ -50,6 +51,7 @@ def load_model(model_path):
     Returns:
         A YOLO object detection model.
     """
+    model = YOLO('yolov8n-seg.pt')
     model = YOLO("best.pt")
     return model
 
@@ -92,8 +94,19 @@ def infer_uploaded_image(conf, model):
                              use_column_width=True)
                     try:
                         with st.expander("Detection Results"):
-                            for box in boxes:
-                                st.write(box.xywh)
+                            # for box in boxes:
+                            #     st.write(res.names[int(box.cls[0])])
+                            cntVeh={'Volkswagen':0,'Tata':0,'Hyundai':0,'Honda':0,'Ford':0,'Maruti Suzuki':0,'Renault':0,'Mahindra':0,'BMW':0,'Kia':0,'Mercedes':0,'Audi':0}
+                            for result in res:                                         # iterate results
+                                boxes = result.boxes.cpu().numpy()                         # get boxes on cpu in numpy
+                                for box in boxes:                                          # iterate boxes
+                                        cntVeh[result.names[int(box.cls[0])]]+=1
+                            # st.write(f"Vehicle Count: {}")
+                            for key,val in cntVeh.items():
+                                if(val>0):
+                                    st.write(f"Vehicle Detected: {key}-->{val}")
+
+                            
                     except Exception as ex:
                         st.write("No image is uploaded yet!")
                         st.write(ex)
@@ -110,10 +123,11 @@ def infer_uploaded_video(conf, model):
         label="Choose a video..."
     )
 
-    if source_video:
-        st.video(source_video)
+    # if source_video:
+    #     
 
     if source_video:
+        st.video(source_video)
         if st.button("Execution"):
             with st.spinner("Running..."):
                 try:
