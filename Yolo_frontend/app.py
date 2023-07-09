@@ -29,7 +29,7 @@ st.title("Vehicle Brand Recognition")
 # sidebar
 st.sidebar.header("Configurations")
 
-# model options
+# model options on sidebar
 task_type = st.sidebar.selectbox(
     "Select Task",
     ["Detection"]
