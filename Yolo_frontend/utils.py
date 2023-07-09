@@ -94,17 +94,16 @@ def infer_uploaded_image(conf, model):
                              use_column_width=True)
                     try:
                         with st.expander("Detection Results"):
-                            # for box in boxes:
-                            #     st.write(res.names[int(box.cls[0])])
+                           # Vehicle Brand List
                             cntVeh={'Volkswagen':0,'Tata':0,'Hyundai':0,'Honda':0,'Ford':0,'Maruti Suzuki':0,'Renault':0,'Mahindra':0,'BMW':0,'Kia':0,'Mercedes':0,'Audi':0}
                             for result in res:                                         # iterate results
                                 boxes = result.boxes.cpu().numpy()                         # get boxes on cpu in numpy
                                 for box in boxes:                                          # iterate boxes
-                                        cntVeh[result.names[int(box.cls[0])]]+=1
+                                        cntVeh[result.names[int(box.cls[0])]]+=1           # counting number of vehicles and thier brands.
                             # st.write(f"Vehicle Count: {}")
                             for key,val in cntVeh.items():
                                 if(val>0):
-                                    st.write(f"Vehicle Detected: {key}-->{val}")
+                                    st.write(f"Vehicle Detected: {key}-->{val}")      # Displaying the results. Company name and thier count.
 
                             
                     except Exception as ex:
