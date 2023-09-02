@@ -1,5 +1,15 @@
-# Vehicle Brand Detection Project
+# Vehicle brand Recognition using yoloV8
 
+## Group members:
+
+1. Anjali Kushwaha 
+2. Chirag Lalwani
+3. Piyush Hatewar
+4. Kushal Gujar
+5. Vedant Mahajan
+<br>
+<br>
+<br>
 <img src="https://github.com/Vehicle-Brand-Detection/Yolov8_final/assets/80624852/61f3a538-28b3-41bd-93c4-367bdf29e6aa" alt="Car Detection 1" width="400" height="300" />
 <br>
 <br>
@@ -41,4 +51,7 @@ Are you excited to make cars smarter and safer? Jump into our guide and join us 
 Happy coding and car brand detecting!
 
 *Note: YOLOv8 and Streamlit are always getting better, so make sure you're using the latest versions and check their instructions for any updates.*
+
+
+
 
