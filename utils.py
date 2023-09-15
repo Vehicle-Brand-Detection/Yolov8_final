@@ -181,9 +181,9 @@ def infer_uploaded_webcam(conf, model):
 
 def show_chart(chart_no):
     if chart_no == 1:
-        st.image('charts\F1_curve.png', 'F1 Curve')
+        st.image('charts/F1_curve.png', 'F1 Curve')
     elif chart_no == 2:
-        st.image('charts\R_curve.png', 'R Curve')
+        st.image('charts/R_curve.png', 'R Curve')
     elif chart_no == 3:
         st.image('charts\P_curve.png', 'P Curve')
     elif chart_no == 4:
