@@ -185,10 +185,10 @@ def show_chart(chart_no):
     elif chart_no == 2:
         st.image('charts/R_curve.png', 'R Curve')
     elif chart_no == 3:
-        st.image('charts\P_curve.png', 'P Curve')
+        st.image('charts/P_curve.png', 'P Curve')
     elif chart_no == 4:
-        st.image('charts\confusion_matrix.png', 'Confuision Matrix')
+        st.image('charts/confusion_matrix.png', 'Confuision Matrix')
     elif chart_no == 5:
-        st.image('charts\PR_curve.png', 'PR Curve')
+        st.image('charts/PR_curve.png', 'PR Curve')
     elif chart_no == 6:
-        st.image('charts\/results.png', 'Results')
+        st.image('charts/results.png', 'Results')
